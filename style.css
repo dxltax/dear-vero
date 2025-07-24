@@ -1,153 +1,116 @@
+/* General */
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at center, #222, #111);
-  font-family: 'Segoe UI', sans-serif;
-  color: #fff;
-  text-align: center;
+  background: linear-gradient(135deg, #ffe0f0, #ffd1dc);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
   overflow: hidden;
 }
 
-.wrapper {
-  padding-top: 5vh;
-}
-
-h1 {
-  font-size: 2.2rem;
-  margin-bottom: 40px;
-}
-
+/* Cake Styling */
 .cake {
   position: relative;
-  margin: 0 auto;
   width: 200px;
-  height: 180px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.cake:hover {
-  transform: scale(1.03);
-}
-
-.layer {
-  position: absolute;
-  width: 100%;
-  height: 50px;
-  border-radius: 50% / 20%;
-  left: 0;
-  background: linear-gradient(to bottom, #ffbfd4, #ff8ca5);
-  box-shadow: inset 0 -5px 0 rgba(255, 255, 255, 0.4);
-}
-.layer-top {
-  top: 0;
-  z-index: 3;
-  width: 120px;
-  left: 40px;
-  height: 40px;
-}
-.layer-middle {
-  top: 40px;
-  z-index: 2;
-  width: 160px;
-  left: 20px;
-}
-.layer-bottom {
-  top: 90px;
+  height: 200px;
+  animation: float 4s ease-in-out infinite;
   z-index: 1;
 }
 
+.tier {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff0f5;
+  border: 4px solid #ffb6c1;
+  border-radius: 10px;
+}
+
+.tier.bottom { width: 200px; height: 60px; bottom: 0; }
+.tier.middle { width: 140px; height: 50px; bottom: 60px; }
+.tier.top { width: 80px; height: 40px; bottom: 110px; }
+
 .candle {
   position: absolute;
+  width: 10px;
+  height: 30px;
+  background: #ffd700;
   top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 30px;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 0 0 5px rgba(255,255,255,0.5);
-  z-index: 4;
-}
-
-.wick {
-  width: 2px;
-  height: 8px;
-  background: #333;
-  margin: 0 auto;
-  margin-top: -8px;
+  border-radius: 2px;
 }
 
 .flame {
-  width: 14px;
-  height: 22px;
-  background: radial-gradient(ellipse at center, #fff900, #ff7700);
-  border-radius: 50% 50% 0 0;
   position: absolute;
-  top: -24px;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, gold, orange, red);
+  border-radius: 50%;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
-  animation: flicker 0.3s infinite alternate;
-  box-shadow: 0 0 12px 4px rgba(255, 174, 0, 0.5);
+  animation: flicker 0.3s infinite;
 }
 
 @keyframes flicker {
-  0% { transform: translateX(-50%) scale(1); opacity: 1; }
-  100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
 }
 
-.tap-text {
-  margin-top: 20px;
-  opacity: 0.85;
-  font-size: 1rem;
+@keyframes float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
 }
 
-.invite {
-  margin: 60px auto 30px;
-  max-width: 600px;
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+/* Text */
+.text {
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+  color: #c71585;
+  font-weight: bold;
+  animation: fadein 2s ease-in-out;
 }
 
-.invite h2 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: #ffb6c1;
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.invite-text {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #f0f0f0;
+/* Button */
+.button {
+  margin-top: 40px;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1;
 }
 
-.map-container {
-  margin-top: 20px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+.button:hover {
+  background-color: #ff1493;
 }
 
-/* --- Confetti Effect --- */
-.confetti {
+/* Confetti Canvas */
+#confetti-canvas {
   position: fixed;
-  top: -10px;
-  z-index: 9999;
-  animation-name: confetti-fall;
-  animation-timing-function: linear;
-  animation-iteration-count: 1;
+  top: 0;
+  left: 0;
   pointer-events: none;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
 }
-
-@keyframes confetti-fall {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-  }
-}
-
