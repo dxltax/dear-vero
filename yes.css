@@ -88,3 +88,22 @@ body {
     transform: translateX(-50%) scale(0.6) rotate(-45deg);
   }
 }
+
+/* Tombol "View Dinner Card" */
+.btn-card {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: white;
+  background: #e91e63;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.3s ease;
+}
+
+.btn-card:hover {
+  background: #d81b60;
+}
