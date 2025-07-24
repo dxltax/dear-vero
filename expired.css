@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background: radial-gradient(#fce4ec, #f8bbd0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #880e4f;
+}
+
+.letter-container {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(136, 14, 79, 0.2);
+  width: 90%;
+  max-width: 500px;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.letter-container h1 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #ad1457;
+}
+
+.letter-container p {
+  margin: 12px 0;
+}
+
+.letter-container .wish {
+  margin-top: 25px;
+  font-style: italic;
+  color: #6a1b45;
+}
+
+.sign {
+  margin-top: 30px;
+  text-align: right;
+  font-weight: bold;
+  color: #ad1457;
+}
