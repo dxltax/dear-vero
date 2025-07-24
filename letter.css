@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #ffe0f0, #ffeaf5);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.letter-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  color: #5a0033;
+  text-align: center;
+  animation: fadeIn 2s ease;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.ask {
+  margin-top: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #c2185b;
+}
+
+.choices {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.yes {
+  background-color: #ff4081;
+  color: white;
+}
+
+.yes:hover {
+  background-color: #e91e63;
+}
+
+.no {
+  background-color: transparent;
+  color: #c2185b;
+  border: 2px solid #c2185b;
+}
+
+.no:hover {
+  background-color: #f8bbd0;
+  color: white;
+  border-color: #f8bbd0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
