@@ -3,52 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Happy Birthday</title>
+  <title>Happy 1st Monthversary</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="wrapper">
-    <h1>Happy Birthday, My Love 💗</h1>
-    <div class="cake" onclick="blowCandles()">
-      <div class="layer layer-bottom"></div>
-      <div class="layer layer-middle"></div>
-      <div class="layer layer-top"></div>
-      <div class="candle">
-        <div class="wick"></div>
-        <div class="flame" id="flame"></div>
-      </div>
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="cake">
+    <div class="tier bottom"></div>
+    <div class="tier middle"></div>
+    <div class="tier top">
+      <div class="candle"></div>
+      <div class="flame"></div>
     </div>
-    <p class="tap-text">Tap the cake to blow out the candle 🎂</p>
+    <div class="text">Happy 1st Monthversary, Vero</div>
   </div>
 
-  <section class="invite">
-  <h2>You’re Invited 🎉</h2>
-<p class="invite-text">
-  Dearest Vero,<br /><br />
-  On this special night, I wish to celebrate not just your birthday,<br />
-  but every little moment that brought us here.<br />
-  Under the open sky, with city lights around us,<br />
-  let’s toast to your laughter, your light, and everything I adore about you.<br /><br />
+  <a href="letter.html" class="button">Read My Letter</a>
 
-  🌆 <strong>Hause Rooftop Jakarta</strong><br />
-  📍 Jl. HOS. Cokroaminoto No.49, Menteng<br />
-  🕗 August 14th, 2025 – 7:00 PM<br /><br />
-  Just you, me, and the stars above 🌌
-</p>
-
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4926623221313!2d106.83030331526766!3d-6.198539495512876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e68abf73e5%3A0x1b3c567b6d31f340!2sHause%20Rooftop!5e0!3m2!1sen!2sid!4v1628780249243!5m2!1sen!2sid" 
-      width="100%" 
-      height="250" 
-      style="border:0; border-radius: 12px;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-
-  <script src="cake-animation.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
