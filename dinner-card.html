@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dinner Confirmation</title>
+  <link rel="stylesheet" href="card.css" />
+</head>
+<body>
+  <div id="card" class="card">
+    <h2>🍽️ Dinner Confirmation</h2>
+    <p class="line">This is to joyfully confirm that</p>
+    <h1>Vero 💖</h1>
+    <p class="line">has agreed to have a romantic dinner</p>
+    <p class="line">with Delta on</p>
+    <h2>August 14, 2025</h2>
+    <p class="sign">Xo, Delta</p>
+  </div>
+
+  <button id="saveBtn">Save as JPEG</button>
+
+  <script src="html2canvas.min.js"></script>
+  <script>
+    document.getElementById('saveBtn').addEventListener('click', function () {
+      html2canvas(document.getElementById('card'), { scale: 3 }).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'dinner-confirmation.jpg';
+        link.href = canvas.toDataURL('image/jpeg', 1.0);
+        link.click();
+      });
+    });
+  </script>
+</body>
+</html>
