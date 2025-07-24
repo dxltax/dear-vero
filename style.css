@@ -1,88 +1,103 @@
 body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at center, #2b2b2b, #000);
-  color: #fff;
+  background: radial-gradient(circle at center, #222, #111);
   font-family: 'Segoe UI', sans-serif;
+  color: #fff;
   text-align: center;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.container {
+.wrapper {
   padding-top: 5vh;
 }
 
 h1 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.2rem;
+  margin-bottom: 40px;
 }
 
 .cake {
-  width: 200px;
-  margin: 0 auto;
   position: relative;
+  margin: 0 auto;
+  width: 200px;
+  height: 180px;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 .cake:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
-.plate {
-  width: 220px;
-  height: 20px;
-  background: #ddd;
-  border-radius: 50%;
+.layer {
   position: absolute;
-  bottom: -20px;
-  left: -10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 50% / 20%;
+  left: 0;
+  background: linear-gradient(to bottom, #ffbfd4, #ff8ca5);
+  box-shadow: inset 0 -5px 0 rgba(255, 255, 255, 0.4);
 }
-
-.cake-body {
-  width: 200px;
-  height: 150px;
-  background: #ff6699;
-  border-radius: 15px 15px 0 0;
-  position: relative;
+.layer-top {
+  top: 0;
+  z-index: 3;
+  width: 120px;
+  left: 40px;
+  height: 40px;
+}
+.layer-middle {
+  top: 40px;
+  z-index: 2;
+  width: 160px;
+  left: 20px;
+}
+.layer-bottom {
+  top: 90px;
   z-index: 1;
 }
 
-.candles {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+.candle {
   position: absolute;
-  top: -40px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 2;
-}
-
-.candle {
   width: 10px;
   height: 30px;
   background: #fff;
-  border-radius: 5px;
-  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(255,255,255,0.5);
+  z-index: 4;
+}
+
+.wick {
+  width: 2px;
+  height: 8px;
+  background: #333;
+  margin: 0 auto;
+  margin-top: -8px;
 }
 
 .flame {
-  width: 10px;
-  height: 15px;
-  background: gold;
+  width: 14px;
+  height: 22px;
+  background: radial-gradient(ellipse at center, #fff900, #ff7700);
   border-radius: 50% 50% 0 0;
   position: absolute;
-  top: -15px;
-  left: 0;
-  animation: flicker 0.5s infinite alternate;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: flicker 0.3s infinite alternate;
+  box-shadow: 0 0 12px 4px rgba(255, 174, 0, 0.5);
 }
 
 @keyframes flicker {
-  from { transform: scale(1) rotate(0deg); opacity: 0.8; }
-  to { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  0% { transform: translateX(-50%) scale(1); opacity: 1; }
+  100% { transform: translateX(-50%) scale(1.1); opacity: 0.8; }
 }
 
-.tip {
+.tap-text {
   margin-top: 20px;
+  opacity: 0.85;
   font-size: 1rem;
-  opacity: 0.8;
 }
