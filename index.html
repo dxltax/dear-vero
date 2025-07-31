@@ -3,43 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Expired Page</title>
-  <link rel="stylesheet" href="expired.css" />
-  <script>
-    window.onload = function() {
-      alert("⚠️ This page has expired and is no longer accessible.");
-    };
-  </script>
+  <title>Messages for Vero</title>
+  <link rel="stylesheet" href="style/main.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffe6f0" />
+  <script src="script/alert.js" defer></script>
 </head>
-<body>
-  <div class="letter-container">
-    <h1>To Vero</h1>
-    <p>
-      I’m sorry this page has to greet you like this.  
-      Today was supposed to be warm, maybe even sweet.  
-      But I can’t pretend that everything’s fine when my heart feels otherwise.
-    </p>
-    <p>
-      It’s only been a month, yet something already feels lost.  
-      I miss the version of you who looked at me like I mattered.  
-      I miss the version of us that felt connected.
-    </p>
-    <p>
-      I don’t know where we’re headed.  
-      Whether we’ll make it or quietly drift apart, I can’t say.  
-      But thank you for the version of you that once stayed.
-    </p>
-    <p>
-      I still wish to see you on the next 24th.  
-      And if that’s not written for us,  
-      I hope we part gently, without wounds and regrets.
-    </p>
-    <p class="wish">
-      May today treat you kindly,  
-      and may peace visit your hear, even just for a little while.
-    </p>
+<body class="cute-theme">
+  <div class="app-container">
+    <header>
+      <img src="assets/profile.jpg" alt="YourBoy" class="profile-pic" />
+      <h1>Messages for Vero</h1>
+      <p class="subtext">From YourBoy, with love 💌</p>
+    </header>
 
-    <p class="sign">Xo, Delta</p>
+    <main class="chat-list">
+      <a href="msg1.html" class="chat-preview">
+        <div class="chat-bubble-preview">
+          <strong>Dearest Vero,</strong>
+          <p>I wrote you something today 💗</p>
+          <span class="date">[Click to Read]</span>
+        </div>
+      </a>
+    </main>
   </div>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(145deg, #ffe6f0, #fff0f5);
+      color: #333;
+    }
+    .cute-theme .app-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .profile-pic {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffb6c1;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 24px;
+      color: #d63384;
+      margin: 0;
+    }
+    .subtext {
+      font-size: 14px;
+      color: #555;
+    }
+    .chat-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .chat-preview {
+      text-decoration: none;
+    }
+    .chat-bubble-preview {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 15px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: all 0.2s ease-in-out;
+      color: #333;
+    }
+    .chat-bubble-preview:hover {
+      background: #fff0f7;
+      transform: scale(1.02);
+    }
+    .date {
+      display: block;
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+    }
+  </style>
 </body>
 </html>
