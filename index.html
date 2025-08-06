@@ -2,20 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Not With Silence, Please</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
-  
   <div class="container">
-    <h1 class="typing-title">Not With Silence, Please</h1>
-    <p class="quote">“Some endings don’t echo with silence, they scream with what we never said.”</p>
-    
-    <a href="page1.html" class="next-button">Read Chapter</a>
+    <div class="quote fade-in">
+      <p>“Some endings aren’t loud. Some end with silence. But I— I never wanted silence from you.”</p>
+    </div>
+    <h1 class="title slide-up">Not With Silence, Please</h1>
+    <a href="intro.html" class="next-button pulse">Open Book</a>
   </div>
 
-  <script src="script.js"></script>
+  <script>
+    // Smooth scroll if needed or future animation
+    document.querySelector('.next-button').addEventListener('click', () => {
+      document.body.style.transition = "opacity 0.5s";
+      document.body.style.opacity = 0;
+    });
+  </script>
 </body>
 </html>
