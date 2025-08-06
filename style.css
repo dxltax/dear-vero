@@ -25,11 +25,11 @@ body {
 }
 
 .quote {
+  quote {
   font-style: italic;
   font-size: 1.2rem;
   opacity: 0;
-  animation: fadeIn 0.8s ease-in forwards;
-  animation-delay: 0.2s;
+  animation: fadeIn 1s ease-in forwards;
 }
 
 .next-button {
